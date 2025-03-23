@@ -35,6 +35,7 @@ function displayItems(items, sectionId) {
     items.forEach(item => {
         let starsHTML = generateStars(item.rating);
 
+        // Coupon Section
         if (sectionId === "coupons-section") {
             html += `
                 <div class="products" onclick="showCouponPopup('${item.name}', '${item.details}', 'ELEC50')">
@@ -46,6 +47,7 @@ function displayItems(items, sectionId) {
                     <button class="Buy-6">Get Coupon</button>
                 </div>`;
         } else {
+            // Other Sections
             html += `
                 <div class="products">
                     <img src="${item.image}" alt="${item.name}">
