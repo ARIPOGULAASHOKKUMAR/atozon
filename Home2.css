@@ -324,6 +324,67 @@ button:hover{
     }
   }
   
+/* Coupon Popup Styles */
+.coupon-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border-radius: 15px;
+    z-index: 1000;
+    width: 90%;
+    max-width: 400px;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+.coupon-popup.active {
+    display: flex;
+}
+
+.coupon-popup h2 {
+    font-family: 'MuseoModerno';
+    font-size: 24px;
+    margin: 0;
+}
+
+.coupon-popup p {
+    font-size: 16px;
+    color: #504a4a;
+}
+
+.copy-button {
+    padding: 10px 20px;
+    background-color: #1167c9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.copy-button:hover {
+    background-color: #0b4e91;
+}
+
+.close-button {
+    padding: 5px 10px;
+    background-color: #c91111;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.close-button:hover {
+    background-color: #911010;
+}
 
 
 
