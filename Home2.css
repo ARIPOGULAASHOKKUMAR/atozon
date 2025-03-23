@@ -324,66 +324,62 @@ button:hover{
     }
   }
   
-/* Coupon Popup Styles */
+/* Popup Overlay */
 .coupon-popup {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    border-radius: 15px;
-    z-index: 1000;
-    width: 90%;
-    max-width: 400px;
-    display: none;
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
-}
-
-.coupon-popup.active {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
-.coupon-popup h2 {
-    font-family: 'MuseoModerno';
-    font-size: 24px;
-    margin: 0;
+/* Popup Content */
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
 }
 
-.coupon-popup p {
-    font-size: 16px;
-    color: #504a4a;
+/* Coupon Code Section */
+.coupon-code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
 }
 
-.copy-button {
-    padding: 10px 20px;
-    background-color: #1167c9;
+.coupon-code input {
+    border: 2px solid #ddd;
+    padding: 10px;
+    width: 180px;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.coupon-code button {
+    padding: 10px 15px;
+    background-color: #28a745;
     color: white;
     border: none;
-    border-radius: 8px;
     cursor: pointer;
-    font-size: 18px;
 }
 
-.copy-button:hover {
-    background-color: #0b4e91;
-}
-
-.close-button {
-    padding: 5px 10px;
-    background-color: #c91111;
+.close-btn {
+    padding: 10px 15px;
+    background-color: red;
     color: white;
     border: none;
-    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
-}
-
-.close-button:hover {
-    background-color: #911010;
+    margin-top: 10px;
 }
 
 
