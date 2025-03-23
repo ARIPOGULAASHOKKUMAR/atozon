@@ -1,3 +1,4 @@
+// Show All Sections on Page Load
 document.addEventListener("DOMContentLoaded", function () {
     showAllProducts();
 });
@@ -14,6 +15,7 @@ function showAllProducts() {
     loadMobiles();
 }
 
+// Hide Other Sections
 function hideOtherSections(activeSection) {
     let allSections = ["products-section", "coupons-section", "electronics-section", "mobiles-section"];
     allSections.forEach(section => {
@@ -21,27 +23,13 @@ function hideOtherSections(activeSection) {
     });
 }
 
-function showProducts() {
-    hideOtherSections("products-section");
-    loadProducts();
-}
+// Section Show Functions
+function showProducts() { hideOtherSections("products-section"); loadProducts(); }
+function showCoupons() { hideOtherSections("coupons-section"); loadCoupons(); }
+function showElectronics() { hideOtherSections("electronics-section"); loadElectronics(); }
+function showMobiles() { hideOtherSections("mobiles-section"); loadMobiles(); }
 
-function showCoupons() {
-    hideOtherSections("coupons-section");
-    loadCoupons();
-}
-
-function showElectronics() {
-    hideOtherSections("electronics-section");
-    loadElectronics();
-}
-
-function showMobiles() {
-    hideOtherSections("mobiles-section");
-    loadMobiles();
-}
-
-// Function to Display Items
+// Display Items
 function displayItems(items, sectionId) {
     let html = "";
     items.forEach(item => {
@@ -73,8 +61,13 @@ function displayItems(items, sectionId) {
     document.getElementById(sectionId).innerHTML = html;
 }
 
-// Function to Show Coupon Popup
+// Show Coupon Popup
 function showCouponPopup(title, details, couponCode) {
+    // Remove existing popup if present
+    const existingPopup = document.getElementById("coupon-popup");
+    if (existingPopup) existingPopup.remove();
+
+    // Create Popup Element
     let popupHtml = `
         <div id="coupon-popup" class="coupon-popup">
             <div class="popup-content">
@@ -88,25 +81,25 @@ function showCouponPopup(title, details, couponCode) {
             </div>
         </div>`;
 
-    let popupDiv = document.createElement("div");
-    popupDiv.innerHTML = popupHtml;
-    document.body.appendChild(popupDiv);
+    // Append to Body
+    document.body.insertAdjacentHTML("beforeend", popupHtml);
 }
 
-// Function to Copy Coupon Code
+// Copy Coupon Code
 function copyCouponCode() {
     let couponText = document.getElementById("coupon-text");
-    couponText.select();
-    document.execCommand("copy");
-    alert("Coupon Code Copied!");
+    navigator.clipboard.writeText(couponText.value)
+        .then(() => alert("Coupon Code Copied!"))
+        .catch(err => alert("Failed to copy!"));
 }
 
-// Function to Close Coupon Popup
+// Close Coupon Popup
 function closeCouponPopup() {
-    document.getElementById("coupon-popup").remove();
+    const popup = document.getElementById("coupon-popup");
+    if (popup) popup.remove();
 }
 
-// Function to Generate Rating Stars
+// Generate Stars
 function generateStars(rating) {
     let stars = "";
     for (let i = 0; i < 5; i++) {
@@ -119,29 +112,53 @@ function generateStars(rating) {
     return stars;
 }
 
-// Load More Products in Each Category
+// Load Products
 function loadProducts() {
     const products = [
-        { name: "HP 15s Laptop", details: "Intel i5, 16GB RAM, 512GB SSD", price: "INR 54,990", rating: 4, 
-          image: "https://m.media-amazon.com/images/I/71J+OBadJCL._SY450_.jpg", link: "https://amzn.to/4hxR3st" }
+        { name: "HP 15s Laptop", 
+          details: "Intel i5, 16GB RAM, 512GB SSD", 
+          price: "INR 54,990", 
+          rating: 4, 
+          image: "https://m.media-amazon.com/images/I/71J+OBadJCL._SY450_.jpg", 
+          link: "https://amzn.to/4hxR3st" }
     ];
     displayItems(products, "products-section");
 }
 
+// Load Coupons
 function loadCoupons() {
-    const coupons = [{ name: "50% Off on Electronics", details: "Use code ELEC50", price: "Limited Offer", rating: 4, 
-        image: "https://blog.swiggy.com/wp-content/uploads/2024/11/1_GRb_rx8fweCdGEnQR5YLAA-1.webp" }];
+    const coupons = [{ 
+        name: "50% Off on Electronics", 
+        details: "Use code ELEC50", 
+        price: "Limited Offer", 
+        rating: 4, 
+        image: "https://blog.swiggy.com/wp-content/uploads/2024/11/1_GRb_rx8fweCdGEnQR5YLAA-1.webp" 
+    }];
     displayItems(coupons, "coupons-section");
 }
 
+// Load Electronics
 function loadElectronics() {
-    const electronics = [{ name: "Sony WH-1000XM5", details: "Noise cancellation, 30-hour battery", price: "INR 29,999", rating: 5, 
-        image: "https://m.media-amazon.com/images/I/71pIlXDTlzL._AC_UL480_FMwebp_QL65_.jpg", link: "https://www.amazon.in/dp/B09X658QZX?tag=your-affiliate-id" }];
+    const electronics = [{ 
+        name: "Sony WH-1000XM5", 
+        details: "Noise cancellation, 30-hour battery", 
+        price: "INR 29,999", 
+        rating: 5, 
+        image: "https://m.media-amazon.com/images/I/71pIlXDTlzL._AC_UL480_FMwebp_QL65_.jpg", 
+        link: "https://www.amazon.in/dp/B09X658QZX?tag=your-affiliate-id" 
+    }];
     displayItems(electronics, "electronics-section");
 }
 
+// Load Mobiles
 function loadMobiles() {
-    const mobiles = [{ name: "Samsung Galaxy F215 5G", details: "6GB RAM, 125GB Storage, 200MP Camera", price: "INR 12,148", rating: 5, 
-        image: "https://m.media-amazon.com/images/I/71qFJqFePsL._SX569_.jpg", link: "https://amzn.to/3XR9i52" }];
+    const mobiles = [{ 
+        name: "Samsung Galaxy F215 5G", 
+        details: "6GB RAM, 125GB Storage, 200MP Camera", 
+        price: "INR 12,148", 
+        rating: 5, 
+        image: "https://m.media-amazon.com/images/I/71qFJqFePsL._SX569_.jpg", 
+        link: "https://amzn.to/3XR9i52" 
+    }];
     displayItems(mobiles, "mobiles-section");
 }
