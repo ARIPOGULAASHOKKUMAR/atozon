@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AtoZon - Affiliate Deals & Coupons</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="Home2.css"> 
+    <link rel="icon" type="image/png" href="36.png">
+</head>
+<body>
+    <div class="fixed-background"></div>
+
+    <!-- Header -->
+    <header>
+        <h1>
+            <img class="Logo" src="Logo.png" alt="AtoZon Logo" onclick="showAllProducts()" style="cursor: pointer;">
+        </h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <div class="menu">
+        <button class="menu-button" onclick="showAllProducts()">Home</button>
+        <button class="menu-button" onclick="showProducts()">Today's Deals</button>
+        <button class="menu-button" onclick="showCoupons()">Coupons</button>
+        <button class="menu-button" onclick="showElectronics()">Electronics</button>
+        <button class="menu-button" onclick="showMobiles()">Mobiles</button>
+    </div>
+
+    <!-- Search and Filter -->
+    <div class="search-filter">
+        <input type="text" id="search-box" placeholder="Search products..." onkeyup="searchProducts()">
+        <select id="category-filter" onchange="filterProducts()">
+            <option value="all">All Categories</option>
+            <option value="products">Today's Deals</option>
+            <option value="coupons">Coupons</option>
+            <option value="electronics">Electronics</option>
+            <option value="mobiles">Mobiles</option>
+        </select>
+        <select id="rating-filter" onchange="filterProducts()">
+            <option value="all">All Ratings</option>
+            <option value="5">5 Stars</option>
+            <option value="4">4 Stars & Up</option>
+            <option value="3">3 Stars & Up</option>
+        </select>
+    </div>
+
+    <!-- Product Sections -->
+    <div id="products-section" class="gallery"></div>
+    <div id="coupons-section" class="gallery"></div>
+    <div id="electronics-section" class="gallery"></div>
+    <div id="mobiles-section" class="gallery"></div>
+
+    <!-- Coupon Popup -->
+    <div id="coupon-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup()">&times;</span>
+            <h2 id="coupon-title"></h2>
+            <p id="coupon-terms"></p>
+            <div class="coupon-code-section">
+                <input type="text" id="coupon-code" readonly>
+                <button onclick="copyCouponCode()">Copy</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="coupon-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup()">&times;</span>
+            <h2 id="coupon-title"></h2>
+            <p id="coupon-terms"></p>
+            <div class="coupon-code-section">
+                <input type="text" id="coupon-code" readonly>
+                <button onclick="copyCouponCode()">Copy</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
