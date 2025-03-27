@@ -325,5 +325,129 @@ button:hover{
   }
   
 
+  /* Popup Overlay */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Popup Content Box */
+.popup-content {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 30px;
+    width: 350px;
+    max-width: 90%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    position: relative;
+    animation: popupAnimation 0.3s ease-out;
+}
+
+/* Close Button */
+.close-button {
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Coupon Title */
+#coupon-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Coupon Terms */
+#coupon-terms {
+    font-size: 1rem;
+    color: #eaeaea;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Coupon Code Section */
+.coupon-code-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Coupon Input Box */
+#coupon-code {
+    width: 200px;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(8px);
+}
+
+/* Copy Button */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(145deg, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 8px 15px rgba(255, 75, 43, 0.2);
+}
+
+/* Button Hover Effect */
+button:hover {
+    background: linear-gradient(145deg, #ff4b2b, #ff416c);
+    box-shadow: 0 15px 30px rgba(255, 75, 43, 0.4);
+    transform: scale(1.05);
+}
+
+/* Animation for Smooth Popup */
+@keyframes popupAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
 
 
