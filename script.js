@@ -50,9 +50,9 @@ function displayItems(items, sectionId) {
     items.forEach(item => {
         let starsHTML = generateStars(item.rating);
 
-        // Coupon Button for Coupon Section
+        // "Get Code" Button for Coupons Section
         let buttonHTML = (sectionId === "coupons-section") 
-            ? `<button class="Buy-6" onclick="showCouponPopup('${item.name}', '${item.details}', '${item.couponCode}')">Show Code</button>`
+            ? `<button class="Buy-6" onclick="showCouponPopup('${item.name}', '${item.details}', '${item.couponCode}')">Get Code</button>`
             : `<button class="Buy-6" onclick="window.open('${item.link}', '_blank')">Own It</button>`;
 
         html += `
@@ -78,7 +78,7 @@ function generateStars(rating) {
     return stars;
 }
 
-// Search Products Function
+// Search Functionality
 function searchProducts() {
     let query = document.getElementById("search-box").value.toLowerCase();
     let allSections = ["products-section", "coupons-section", "electronics-section", "mobiles-section"];
@@ -127,7 +127,7 @@ function loadCoupons() {
     const coupons = [
         { 
             name: "50% Off on Electronics",
-            details: "Use code ELEC50", 
+            details: "Use code ELEC50 for 50% off on all electronics.", 
             price: "Limited Offer", 
             rating: 4, 
             image: "https://blog.swiggy.com/wp-content/uploads/2024/11/1_GRb_rx8fweCdGEnQR5YLAA-1.webp", 
@@ -165,19 +165,20 @@ function loadMobiles() {
     displayItems(mobiles, "mobiles-section");
 }
 
-// Coupon Popup Functionality
-function showCouponPopup(title, terms, code) {
+// Show Coupon Popup
+function showCouponPopup(title, details, code) {
     document.getElementById("coupon-title").innerText = title;
-    document.getElementById("coupon-terms").innerText = terms;
+    document.getElementById("coupon-terms").innerText = details;
     document.getElementById("coupon-code").value = code;
     document.getElementById("coupon-popup").style.display = "block";
 }
 
+// Close Popup
 function closePopup() {
     document.getElementById("coupon-popup").style.display = "none";
 }
 
-// Copy Coupon Code
+// Copy Coupon Code to Clipboard
 function copyCouponCode() {
     let copyText = document.getElementById("coupon-code");
     copyText.select();
