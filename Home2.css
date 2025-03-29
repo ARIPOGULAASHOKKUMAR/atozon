@@ -269,9 +269,13 @@ button:hover{
     }
 }
 
-@media(max-width:750px){
+@media(max-width:720px){
     .products{
-        width: 50%;
+        width: 45%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        gap: 10px; /* Space between items */
+        justify-content: center;
     }
 }
 @media (max-width: 768px){
@@ -326,7 +330,7 @@ button:hover{
 
     
 /* Responsive Styles for Mobile */
-@media (max-width: 768px) {
+@media (max-width: 720px) {
     .search-filter {
       flex-direction:row;
       align-items:flex-end;
@@ -357,6 +361,10 @@ button:hover{
     .products {
         width: 100%;
         margin: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        gap: 10px; /* Space between items */
+        justify-content: center;
     }
 
     .menu {
