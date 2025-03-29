@@ -120,7 +120,7 @@ a{
 
 
 .products{
-    width: 16%;
+    width: 15%;
     margin: 15px;
     box-sizing: border-box;
     float: left;
@@ -145,6 +145,7 @@ a{
 
 }
 
+/*
 .item {
     width: 250px;
     text-align: center;
@@ -154,7 +155,7 @@ a{
     background: #f2f2f2;
 }
 
-
+*/
 
 
 img{
@@ -174,7 +175,7 @@ p{
     text-align: center;
     color: #cbc1c1;
     padding-top: 0 8px ;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 2000px;
 
 }
@@ -185,16 +186,16 @@ p{
 h3{
     font-family: 'MuseoModerno';    
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
     margin: 0;
     padding-top: 10px;
      
 }
 
 .fa{
-    font-size: 20px;
+    font-size: 16px;
     transition: .4s;
-    margin: 3px;
+    margin: 5px;
 }
 
 
@@ -202,7 +203,7 @@ h3{
 h6{
     font-family: 'MuseoModerno';    
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     margin: 0;
     padding-top: 10px;
      
@@ -301,74 +302,195 @@ button:hover{
     opacity: 0.6;
 }
 
-
-@media(max-width:1000px){
-    .products{
-        width: 100%;
-    }
-}
-
-@media(max-width:750px){
-    .products{
-        width: 100%;
-    }
-}
-
+@media (max-width: 1500px) {
+      
     
-/* Responsive Styles for Mobile */
-@media (max-width: 768px) {
-    .search-filter {
-      flex-direction: row;
-      align-items:flex-end;
-      gap: 10px;
+    .products img {
+        width: 100%; /* Full width for smaller devices */
+        height: auto;
     }
-  
+
+    .products h3{
+        font-size: 10px;
+        width: 100%;
+        height: auto;
+    }
+
+    .products h6{
+        font-size: 10px;
+        width: 100%;
+        height: auto;
+    }
+
+    .products i{
+        scale:90%;
+    };
+
+    .products p{
+        font-size: 8px;
+        width: 100%;
+        height: auto;
+    }
+
+    .products button{
+        padding: 3px 6px;
+        width: 100%;
+        height: auto;
+        
+    }
+
+
+.h1{
+        height:200px;
+        scale: 50%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .Logo{
+        scale: 50%;
+    }
+
+    .search-filter {
+        flex-direction: row;
+        align-items:flex-end;
+        gap: 1px;
+      }
     .search-filter input[type="text"],
     .search-filter select,
     .search-filter button {
-      width: 100%;
-      padding: 10px;
-      font-size: 1rem;
+      
+      padding: 5px;
+      font-size: .8rem;
     }
   
     .search-filter button {
       margin-top: 10px;
     }
 
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
-        gap: 10px;
-        justify-content: center;
-        padding: 10px;
+    .menu button{
+        font-size: 12px;
+        padding: 5px 8px;
+        gap: 1px;
+        flex-direction: row;
+        align-items:flex-end;
     }
 
-    .products {
-        width: 100%;
-        margin: 0;
+    .menu{
+        padding: 1px;
+    }
+ 
+    .header{
+
     }
 
-    .menu {
-        flex-wrap: wrap; /* Allows wrapping */
-        justify-content: center;
-        gap: 5px;
-    }
-
-    .menu-button {
-        font-size: 14px;
-        padding: 8px 10px;
-    }
-
-  } 
-
-@media (max-width: 480px) {
-   .gallery {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for extra small screens */
-    }
 }
 
 
+@media (max-width: 760px) {
+.products button{
+    font-size: 10px;
+    padding: 3px 6px;
+    width: 100%;
+    height: auto;
+    
+}
 
+}
+
+    
+
+@media (max-width: 360px) {
+    .h1{
+        height:200px;
+        scale: 50%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .Logo{
+        scale: 50%;
+    }
+
+    .search-filter {
+        width: 100%;
+        flex-direction: row;
+        align-items:flex-end;
+        gap: 1px;
+      }
+    .search-filter input[type="text"],
+    .search-filter select,
+    .search-filter button {
+      width: 60%;
+      padding: 5px;
+      font-size: .8rem;
+    }
+  
+    .search-filter button {
+      margin-top: 10px;
+    }
+
+    .menu button{
+        font-size: 8px;
+        padding: 5px 8px;
+        gap: 1px;
+        flex-direction: row;
+        align-items:flex-end;
+    }
+
+    .menu{
+        padding: 1px;
+    }
+ 
+    
+    .products{
+        width: 50%;
+
+    }
+    
+   .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for extra small screens */
+    }
+
+    .products img {
+        scale: 80%;
+        width: 100%; /* Full width for smaller devices */
+        height: auto;
+    }
+
+    .products h3{
+        font-size: 10px;
+        width: 100%;
+        height: auto;
+    }
+
+    .products h6{
+        font-size: 10px;
+        width: 100%;
+        height: auto;
+    }
+
+    
+    .products p{
+        font-size: 5px;
+        width: 100%;
+        height: auto;
+    }
+
+    .products button{
+
+        font-size: 10px;
+    }
+
+    
+
+    
+       
+
+    
+
+    
+}
   
 
   /* Popup Overlay */
