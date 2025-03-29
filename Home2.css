@@ -266,6 +266,10 @@ button:hover{
 @media(max-width:1000px){
     .products{
         width: 35%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        gap: 10px; /* Space between items */
+        justify-content: center;
     }
 }
 
