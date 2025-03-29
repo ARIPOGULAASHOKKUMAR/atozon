@@ -266,7 +266,7 @@ button:hover{
 @media(max-width:1000px){
     .products{
         width: 35%;
-        display: grid;
+        display:flex;
         grid-template-columns: repeat(3, 1fr); /* 3 columns */
         gap: 10px; /* Space between items */
         justify-content: center;
@@ -342,6 +342,7 @@ button:hover{
     }
 
     .gallery {
+        width: 45%;
         display: grid;
         grid-template-columns: repeat(3, 1fr); /* 3 columns */
         gap: 10px; /* Space between items */
@@ -363,7 +364,7 @@ button:hover{
 
 
     .products {
-        width: 100%;
+        width: 30%;
         margin: 0;
         display: grid;
         grid-template-columns: repeat(3, 1fr); /* 3 columns */
