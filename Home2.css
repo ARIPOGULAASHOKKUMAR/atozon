@@ -398,6 +398,25 @@ button:hover{
 
 }
 
+
+@media (max-width: 850px) {
+    .products{
+        width: 25%;
+
+    }
+    
+
+}
+
+@media (max-width: 650px) {
+    .products{
+        width: 25%;
+
+    }
+    
+
+}
+
     
 
 @media (max-width: 360px) {
@@ -409,7 +428,7 @@ button:hover{
     }
 
     .Logo{
-        scale: 50%;
+        scale: 80%;
     }
 
     .search-filter {
@@ -444,7 +463,7 @@ button:hover{
  
     
     .products{
-        width: 50%;
+        width: 30%;
 
     }
     
